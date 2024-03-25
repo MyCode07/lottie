@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--metatextblock-->
+    <title>Тест анимации лотти</title>
+
+    <script type="text/javascript">(function (d) {
+            if (!d.visibilityState) {
+                var s = d.createElement('script');
+                s.src = 'https://static.tildacdn.com/js/tilda-polyfill-1.0.min.js';
+                d.getElementsByTagName('head')[0].appendChild(s);
+            }
+        })(document);
+        function t_onReady(func) {
+            if (document.readyState != 'loading') {
+                func();
+            } else {
+                document.addEventListener('DOMContentLoaded', func);
+            }
+        }
+        function t_onFuncLoad(funcName, okFunc, time) {
+            if (typeof window[funcName] === 'function') {
+                okFunc();
+            } else {
+                setTimeout(function () {
+                    t_onFuncLoad(funcName, okFunc, time);
+                }, (time || 100));
+            }
+        }
+        function t396_initialScale(t) {
+            var e = document.getElementById("rec" + t);
+            if (e) {
+                var r = e.querySelector(".t396__artboard");
+                if (r) {
+                    var a, i = document.documentElement.clientWidth, l = [], d = r.getAttribute("data-artboard-screens");
+                    if (d) { d = d.split(","); for (var o = 0; o < d.length; o++)l[o] = parseInt(d[o], 10) }
+                    else l = [320, 480, 640, 960, 1200];
+                    for (o = 0; o < l.length; o++) {
+                        var n = l[o]; n <= i && (a = n)
+                    }
+                    var g = "edit" === window.allrecords.getAttribute("data-tilda-mode"),
+                        u = "center" === t396_getFieldValue(r, "valign", a, l),
+                        c = "grid" === t396_getFieldValue(r, "upscale", a, l),
+                        t = t396_getFieldValue(r, "height_vh", a, l),
+                        f = t396_getFieldValue(r, "height", a, l),
+                        e = !!window.opr && !!window.opr.addons || !!window.opera || -1 !== navigator.userAgent.indexOf(" OPR/");
+                    if (!g && u && !c && !t && f && !e) {
+                        
+                        for (var s = parseFloat((i / a).toFixed(3)),
+                            _ = [r, r.querySelector(".t396__carrier"),
+                                r.querySelector(".t396__filter")],
+                            o = 0; 
+                            o < _.length; o++)_[o].style.height = parseInt(f, 10) * s + "px";
+                        console.log(f); 
+                        for (var h = r.querySelectorAll(".t396__elem"),
+                            o = 0; o < h.length; o++)h[o].style.zoom = s
+                    }
+                }
+            }
+        }
+        function t396_getFieldValue(t, e, r, a) {
+            var i = a[a.length - 1], l = r === i ? t.getAttribute("data-artboard-" + e) : t.getAttribute("data-artboard-" + e + "-res-" + r);
+            if (!l) for (var d = 0; d < a.length; d++) {
+                var o = a[d];
+                if (!(o <= r) && (l = o === i ? t.getAttribute("data-artboard-" + e) : t.getAttribute("data-artboard-" + e + "-res-" + o))) break
+            } return l
+        }
+    </script>
+
+    <script src="https://static.tildacdn.com/js/jquery-1.10.2.min.js" charset="utf-8"
+        onerror="this.loaderr='y';"></script>
+    <script src="https://static.tildacdn.com/js/tilda-scripts-3.0.min.js" charset="utf-8" defer
+        onerror="this.loaderr='y';"></script>
+
+    <script src="https://static.tildacdn.com/js/lazyload-1.3.min.js" charset="utf-8" async
+        onerror="this.loaderr='y';"></script>
+    <script src="https://static.tildacdn.com/js/tilda-animation-2.0.min.js" charset="utf-8" async
+        onerror="this.loaderr='y';"></script>
+    <script src="https://static.tildacdn.com/js/tilda-zero-1.1.min.js" charset="utf-8" async
+        onerror="this.loaderr='y';"></script>
+    <script src="https://static.tildacdn.com/js/tilda-animation-ext-1.0.min.js" charset="utf-8" async
+        onerror="this.loaderr='y';"></script>
+    <script src="https://static.tildacdn.com/js/tilda-zero-scale-1.0.min.js" charset="utf-8" async
+        onerror="this.loaderr='y';"></script>
+    <script src="https://static.tildacdn.com/js/tilda-events-1.0.min.js" charset="utf-8" async
+        onerror="this.loaderr='y';"></script>
+
+
+
+</head>
+
+<body class="t-body" style="margin:0;"><!--allrecords-->
+    <div id="allrecords" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="4831223"
+        data-tilda-page-id="34976166" data-tilda-page-alias="ltt1"
+        data-tilda-formskey="e144b1fb34f6ae134e88d70f84f3c7cf" data-tilda-lazy="yes" data-tilda-project-headcode="yes">
+        <div id="rec565124892" class="r t-rec" style=" " data-animationappear="off" data-record-type="396"><!-- T396 -->
+            <style>
+                #rec565124892 .t396__artboard {
+                    height: 5000px;
+                    background-image: linear-gradient(0deg, rgba(255, 209, 209, 1) 0%, rgba(170, 218, 227, 1) 18%, rgba(138, 240, 135, 1) 34%, rgba(232, 145, 102, 1) 49%, rgba(98, 76, 237, 1) 62%, rgba(94, 245, 39, 1) 81%, rgba(234, 255, 0, 1) 100%);
+                }
+
+                #rec565124892 .t396__filter {
+                    height: 5000px;
+                }
+
+                #rec565124892 .t396__carrier {
+                    height: 5000px;
+                    background-position: center center;
+                    background-attachment: scroll;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+
+                @media screen and (max-width: 1199px) {
+                    #rec565124892 .t396__artboard {}
+
+                    #rec565124892 .t396__filter {}
+
+                    #rec565124892 .t396__carrier {
+                        background-attachment: scroll;
+                    }
+                }
+
+                @media screen and (max-width: 959px) {
+                    #rec565124892 .t396__artboard {}
+
+                    #rec565124892 .t396__filter {}
+
+                    #rec565124892 .t396__carrier {
+                        background-attachment: scroll;
+                    }
+                }
+
+                @media screen and (max-width: 639px) {
+                    #rec565124892 .t396__artboard {}
+
+                    #rec565124892 .t396__filter {}
+
+                    #rec565124892 .t396__carrier {
+                        background-attachment: scroll;
+                    }
+                }
+
+                @media screen and (max-width: 479px) {
+                    #rec565124892 .t396__artboard {}
+
+                    #rec565124892 .t396__filter {}
+
+                    #rec565124892 .t396__carrier {
+                        background-attachment: scroll;
+                    }
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679144178312"] {
+                    z-index: 9;
+                    top: 64px;
+                    left: calc(50% - 600px + 148px);
+                    width: 906px;
+                    height: 342px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679144178312"] .tn-atom {
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+
+                #rec565124892 .tn-elem[data-elem-id="1679144901897"] {
+                    z-index: 1;
+                    top: 26px;
+                    left: calc(50% - 600px + 559px);
+                    width: 100px;
+                    height: 100px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679144901897"] .tn-atom {
+                    background-color: #fff705;
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+
+                #rec565124892 .tn-elem[data-elem-id="1679145880060"] {
+                    z-index: 2;
+                    top: 663px;
+                    left: calc(50% - 600px + 939px);
+                    width: 100px;
+                    height: 100px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679145880060"] .tn-atom {
+                    background-color: #fff705;
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+
+                #rec565124892 .tn-elem[data-elem-id="1679145883555"] {
+                    z-index: 3;
+                    top: 909px;
+                    left: calc(50% - 600px + 229px);
+                    width: 100px;
+                    height: 100px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679145883555"] .tn-atom {
+                    background-color: #fff705;
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+
+                #rec565124892 .tn-elem[data-elem-id="1679145886195"] {
+                    z-index: 4;
+                    top: 1099px;
+                    left: calc(50% - 600px + 810px);
+                    width: 100px;
+                    height: 100px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679145886195"] .tn-atom {
+                    background-color: #fff705;
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+
+                #rec565124892 .tn-elem[data-elem-id="1679145888740"] {
+                    z-index: 5;
+                    top: 1272px;
+                    left: calc(50% - 600px + 340px);
+                    width: 100px;
+                    height: 100px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679145888740"] .tn-atom {
+                    background-color: #fff705;
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+
+                #rec565124892 .tn-elem[data-elem-id="1679145891195"] {
+                    z-index: 6;
+                    top: 1685px;
+                    left: calc(50% - 600px + 926px);
+                    width: 100px;
+                    height: 100px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679145891195"] .tn-atom {
+                    background-color: #fff705;
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+
+                #rec565124892 .tn-elem[data-elem-id="1679145893184"] {
+                    z-index: 7;
+                    top: 1827px;
+                    left: calc(50% - 600px + 141px);
+                    width: 100px;
+                    height: 100px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679145893184"] .tn-atom {
+                    background-color: #fff705;
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+
+                #rec565124892 .tn-elem[data-elem-id="1679145895092"] {
+                    z-index: 8;
+                    top: 2254px;
+                    left: calc(50% - 600px + 703px);
+                    width: 100px;
+                    height: 100px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679145895092"] .tn-atom {
+                    background-color: #fff705;
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+
+                #rec565124892 .tn-elem[data-elem-id="1679146990668"] {
+                    z-index: 10;
+                    top: 1900px;
+                    left: calc(50% - 600px + 143px);
+                    width: 906px;
+                    height: 342px;
+                }
+
+                #rec565124892 .tn-elem[data-elem-id="1679146990668"] .tn-atom {
+                    background-position: center center;
+                    border-color: transparent;
+                    border-style: solid;
+                }
+
+                @media screen and (max-width: 1199px) {}
+
+                @media screen and (max-width: 959px) {}
+
+                @media screen and (max-width: 639px) {}
+
+                @media screen and (max-width: 479px) {}
+            </style>
+            <div class='t396'>
+                <div class="t396__artboard" data-artboard-recid="565124892" data-artboard-screens="320,480,640,960,1200"
+                    data-artboard-height="5000" data-artboard-valign="center" data-artboard-upscale="window">
+                    <div class="t396__carrier" data-artboard-recid="565124892"></div>
+                    <div class="t396__filter" data-artboard-recid="565124892"></div>
+                    <div class='t396__elem tn-elem tn-elem__5651248921679144178312' data-elem-id='1679144178312'
+                        data-elem-type='html' data-field-top-value="64" data-field-left-value="148"
+                        data-field-height-value="342" data-field-width-value="906" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px" data-animate-fix="0" data-animate-fix-dist="1300"
+                        data-animate-fix-trgofst="15">
+                        <div class='tn-atom tn-atom__html'>
+                            <div id=lottie-1></div>
+                        </div>
+                    </div>
+                    <div class='t396__elem tn-elem tn-elem__5651248921679144901897' data-elem-id='1679144901897'
+                        data-elem-type='shape' data-field-top-value="26" data-field-left-value="559"
+                        data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px">
+                        <div class='tn-atom'></div>
+                    </div>
+                    <div class='t396__elem tn-elem tn-elem__5651248921679145880060' data-elem-id='1679145880060'
+                        data-elem-type='shape' data-field-top-value="663" data-field-left-value="939"
+                        data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px">
+                        <div class='tn-atom'></div>
+                    </div>
+                    <div class='t396__elem tn-elem tn-elem__5651248921679145883555' data-elem-id='1679145883555'
+                        data-elem-type='shape' data-field-top-value="909" data-field-left-value="229"
+                        data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px">
+                        <div class='tn-atom'></div>
+                    </div>
+                    <div class='t396__elem tn-elem tn-elem__5651248921679145886195' data-elem-id='1679145886195'
+                        data-elem-type='shape' data-field-top-value="1099" data-field-left-value="810"
+                        data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px">
+                        <div class='tn-atom'></div>
+                    </div>
+                    <div class='t396__elem tn-elem tn-elem__5651248921679145888740' data-elem-id='1679145888740'
+                        data-elem-type='shape' data-field-top-value="1272" data-field-left-value="340"
+                        data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px">
+                        <div class='tn-atom'></div>
+                    </div>
+                    <div class='t396__elem tn-elem tn-elem__5651248921679145891195' data-elem-id='1679145891195'
+                        data-elem-type='shape' data-field-top-value="1685" data-field-left-value="926"
+                        data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px">
+                        <div class='tn-atom'></div>
+                    </div>
+                    <div class='t396__elem tn-elem tn-elem__5651248921679145893184' data-elem-id='1679145893184'
+                        data-elem-type='shape' data-field-top-value="1827" data-field-left-value="141"
+                        data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px">
+                        <div class='tn-atom'></div>
+                    </div>
+                    <div class='t396__elem tn-elem tn-elem__5651248921679145895092' data-elem-id='1679145895092'
+                        data-elem-type='shape' data-field-top-value="2254" data-field-left-value="703"
+                        data-field-height-value="100" data-field-width-value="100" data-field-axisy-value="top"
+                        data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px"
+                        data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px">
+                        <div class='tn-atom'></div>
+                    </div>
+                    <div class='t396__elem tn-elem temp-class tn-elem__5651248921679146990668'
+                        data-elem-id='1679146990668' data-elem-type='html' data-field-top-value="1900"
+                        data-field-left-value="143" data-field-height-value="342" data-field-width-value="906"
+                        data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid"
+                        data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px"
+                        data-field-widthunits-value="px" data-animate-fix="0" data-animate-fix-dist="1500"
+                        data-animate-fix-trgofst="15">
+                        <div class='tn-atom tn-atom__html'>
+                            <div id=lottie-2></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                t_onFuncLoad('t396_initialScale', function () {
+                    t396_initialScale('565124892');
+                });
+                t_onReady(function () {
+                    t_onFuncLoad('t396_init', function () {
+                        t396_init('565124892');
+                    });
+                });
+            </script><!-- /T396 -->
+        </div>
+        <div id="rec565125768" class="r t-rec" style=" " data-animationappear="off" data-record-type="131"><!-- T123 -->
+            <div class="t123">
+                <div class="t-container_100 ">
+                    <div class="t-width t-width_100 ">
+
+                        <script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.0/lottie.js'></script>
+
+                        <script>
+
+                            var theWindow = $(window);
+                            var winHeight = theWindow.height();
+                            console.log(winHeight);
+
+                            const bp = [
+                                {
+                                    start: 0,
+                                    duration: winHeight * 2,
+                                    data: {
+                                        container: document.getElementById('lottie-1'),
+                                        renderer: 'svg',
+                                        loop: false,
+                                        autoplay: false,
+                                        path: 'https://gist.githubusercontent.com/fatninza/46b85df069b8bf5b4a772d65ab7b8f1c/raw/f4c285cbfe38f92744a37bdeec9dd220c3f755f7/ltt3.json'
+                                    },
+                                    anim: null
+                                },
+                                {
+                                    start: 3100,
+                                    duration: winHeight * 2,
+                                    data: {
+                                        container: document.getElementById('lottie-2'),
+                                        renderer: 'svg',
+                                        loop: false,
+                                        autoplay: false,
+                                        path: 'https://gist.githubusercontent.com/fatninza/7faceb24677c9507c1a331e230505ca3/raw/baeeb5b7091e98c82de53f9b5b880fcf175d0a86/ltt666.json'
+                                    },
+                                    anim: null
+                                }
+                            ];
+
+                            bp.forEach(v => { v.anim = bodymovin.loadAnimation(v.data) });
+
+                            $(window).scroll(function () {
+                                const pos = theWindow.scrollTop();
+                                console.log(pos);
+
+                                bp.forEach((v, i) => {
+                                    if (pos >= v.start && pos < v.start + v.duration) {
+                                        var maxFrames = v.anim.totalFrames;
+                                        var frame = maxFrames * (pos - v.start) / v.duration;
+                                        v.anim.goToAndStop(frame, true);
+                                    }
+                                })
+                            });
+
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

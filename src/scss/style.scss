@@ -1,0 +1,23 @@
+@import "null";
+@import "mixins";
+@import url("https://fonts.cdnfonts.com/css/montserrat");
+
+@import "parts/header";
+@import "parts/home";
+@import "parts/scene";
+
+body {
+    // background: linear-gradient(90deg, rgb(71, 71, 71) 0%, rgb(255, 255, 255) 100%);
+    background: #7f8c8d;
+    font-family: "Montserrat", sans-serif;
+}
+
+._container {
+    max-width: 1440px;
+    margin-inline: auto;
+
+    @media (max-width: 1500px) {
+        max-width: none;
+        padding: 0 30px;
+    }
+}
